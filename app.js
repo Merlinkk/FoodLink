@@ -16,6 +16,7 @@ const ingredientList = document.getElementById('ingList');
 const instructions = document.getElementById('instPara');
 
 const popupImg = document.getElementById('popupImg'); // <img id="popupImg">
+const discover = document.getElementById('discover'); // <button id="discover">
 
 fetchMeal(title,foodImg)
 
@@ -141,7 +142,7 @@ searchGlass.addEventListener('click',()=>{
     let query = document.getElementById('search').value
     document.getElementById('searchRl').innerHTML = `${query}:`
     fetchByCategory(query)
-    window.location.href = `#searchRl`
+    scroll(searchResults)  
     
 })
 
@@ -150,8 +151,7 @@ searchBtn.addEventListener('click',()=>{
     let query = document.getElementById('search').value
     document.getElementById('searchRl').innerHTML = `${query}:`
     fetchByCategory(query)
-    window.location.href = `#searchRl`
-    
+    scroll(searchResults)    
 })
 
 function fetchByCategory(category){
@@ -191,6 +191,16 @@ function fetchByID(Id){
     .then(res=> res.json())
     .then(data=> {
         renderMeal(data.meals[0])
-        window.location.href = `#arrow`
+        scroll(document.getElementById('arrow'))
     })
 }
+
+function scroll (dest){
+    const target = document.documentElement;
+    dest.scrollIntoView({behavior: 'smooth'});
+}
+
+discover.addEventListener('click', ()=>{
+    fetchMeal(title,foodImg)
+    scroll(foodImg)
+})
