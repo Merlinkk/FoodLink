@@ -66,6 +66,7 @@ window.addEventListener('keydown', (e)=>{
 foodImg.addEventListener('click', ()=>{
     popup.style.display = "flex";
     document.body.style.overflow = "hidden";
+    window.location.href = `#cross2`
 })
 
 cross1.addEventListener('click', ()=>{

@@ -90,6 +90,9 @@ nav{
     background-color: #7AE18C;
     color: #13171D;
     cursor: pointer;
+    transition: border 0.3s ease-in;
+    transition: background-color 0.3s ease-in;
+    transition: color 0.3s ease-in;
 }
 .btns .btn:hover{
     background-color: #13171D;
@@ -102,6 +105,8 @@ nav{
 }
 #btn1:hover{
     border: 1px solid black;
+    color: white;
+    border: 1px solid white;
 }
 
 .right img{
@@ -307,6 +312,13 @@ hr{
 #searchResults{
     flex-direction: column;
 }
+#cross2{
+    display: none;
+}
+
+.logo,.links,#searchGlass{
+    cursor: pointer;
+}
 
 
 @media (max-width:500px) and (max-height: 1000px){
@@ -358,6 +370,9 @@ hr{
     .recipeBox img{
         width: 100%;
         height: 100%;
+    }
+    .recipeContainer h1{
+        font-size: 30px;
     }
     .popupImgDiv img{
         width: 100%;
@@ -464,12 +479,15 @@ hr{
         display: none;
     }
     #cross2{
+        display: initial;
         padding: 0;
     } 
     .right h2{
         padding: 0;
         padding-bottom: 10px;
     }
-    
+    .recipeContainer{
+        padding: 10px;
+    }
     }
 
