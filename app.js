@@ -126,9 +126,9 @@ function renderIngredients(imageLinks,ingredients){
 
 function renderInstructions(data){
     let str  = data.strInstructions
-    str = str.replace(/(\r\n|\n|\r)/gm, "<br>>");
+    
 
-    instructions.innerHTML = str;
+    instructions.innerText = str;
 }
 
 const searchResults = document.getElementById('searchResults')
@@ -203,4 +203,14 @@ function scroll (dest){
 discover.addEventListener('click', ()=>{
     fetchMeal(title,foodImg)
     scroll(foodImg)
+})
+
+window.addEventListener('keydown', (e)=>{
+    if(e.key === "Enter"){
+        document.getElementById('searchResults').style.display = "initial"
+    let query = document.getElementById('search').value
+    document.getElementById('searchRl').innerHTML = `${query}:`
+    fetchByCategory(query)
+    scroll(searchResults)  
+    }
 })
