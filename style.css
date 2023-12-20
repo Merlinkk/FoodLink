@@ -303,3 +303,173 @@ hr{
     background-color: #7AE18C;
     color: #13171D;
 }
+
+#searchResults{
+    flex-direction: column;
+}
+
+
+@media (max-width:500px) and (max-height: 1000px){
+    .section{
+        flex-direction: column;
+    }
+    .input{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-top: 1px;
+    }
+    .input input{
+        width: 100%;
+        font-size: 30px;
+    }
+    .left{
+        width: 100%;
+    }
+    .right{
+        width: 100%;
+    }
+    .right1{
+        width: 100%;
+    }
+    .left1{
+        width: 100%;
+    }
+    .btns{
+        flex-direction: column;
+        text-align: center;
+    }
+    .btns .btn{
+        margin: 10px;
+    }
+    .btns .btn:hover{
+        background-color: #13171D;
+        color: #7AE18C;
+    }
+    .quote{
+        font-size: 30px;
+    }
+    .recipeContainer{
+        margin: 10px;
+    }
+    .recipeBox{
+        margin: 10px;
+    }
+    .recipeBox img{
+        width: 100%;
+        height: 100%;
+    }
+    .popupImgDiv img{
+        width: 100%;
+        border-radius: 30px;
+    }
+    .right1{
+        width: 100%;
+        margin: 10px;
+    }
+    .left1{
+        width: 100%;
+        margin: 10px;
+    }
+    .modalText{
+        font-size: 15px;
+    }
+    #ingredients{
+        font-size: 10px;
+    }
+    #ingList li{
+        padding: 5px;
+        margin: 2px;
+        font-size: 10px;
+    }
+    #instructions{
+        font-size: 15px;
+    }
+    #searchResults{
+        font-size: 20px;
+    }
+    #resultContainer li{
+        padding: 10px;
+    }
+    #resultContainer li img{
+        height: 150px;
+    }
+    #searchGlass{
+        display: none;
+    }
+    .arrow{
+        height: 50px;
+        rotate: 90deg;
+        padding: 10px;
+        margin:10px;
+    }
+    .logo{
+        width: 30%;
+    }
+    .links{
+        width: 70%;
+    }
+    .icon img{
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+    .title span{
+        font-size: 20px;
+    }
+    .greenStyle{
+        font-size: 20px;
+    }   
+    .recipeContainer h1{
+        text-align: center;
+    }
+    
+    #searchResults{
+        flex-direction: column;
+    }
+    #popup{
+        flex-direction: column-reverse;
+    }
+    .left1{
+        overflow-y:initial;
+    }
+    #ingList{
+        flex-wrap: initial;
+        overflow-x: scroll;
+    }
+    #ingList li{
+        flex-direction: column;
+    }
+    #ingList li img{
+        height: 50px;
+    }
+    
+    #ingList li span{
+        font-size: 20px;
+    }
+
+    .left1,.right1{
+        margin: 0;
+    }
+
+    #imgList{
+        display: flex;
+        margin: 10px;
+        justify-content: center;
+    }
+    iframe{
+        display: none;
+    }
+    #cross1{
+        display: none;
+    }
+    #cross2{
+        padding: 0;
+    } 
+    .right h2{
+        padding: 0;
+        padding-bottom: 10px;
+    }
+    
+    }
+

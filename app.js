@@ -5,8 +5,11 @@ const popup = document.getElementById('popup');
 const popupName = document.getElementById('popupName'); 
 const foodVideo = document.querySelector('iframe');
 const popupImgLink = document.getElementById('imgLink');
-const cross = document.querySelector('.close');
+const cross1 = document.getElementById('cross1');
+const cross2 = document.getElementById('cross2');
 foodContainerMain.style.display = "none";
+
+const searchBtn = document.getElementById('btn1');
 
 const ingredientList = document.getElementById('ingList');
 const instructions = document.getElementById('instPara');
@@ -65,10 +68,15 @@ foodImg.addEventListener('click', ()=>{
     document.body.style.overflow = "hidden";
 })
 
-cross.addEventListener('click', ()=>{
+cross1.addEventListener('click', ()=>{
     popup.style.display = "none";
     document.body.style.overflow = "auto";
 }) 
+cross2.addEventListener('click', ()=>{
+    popup.style.display = "none";
+    document.body.style.overflow = "auto";
+})
+
 
 function fetchIngredientImage(ingredient){
     return `https://www.themealdb.com/images/ingredients/${ingredient}-Small.png`
@@ -118,11 +126,22 @@ function renderInstructions(data){
     instructions.innerHTML = str;
 }
 
-
+const searchResults = document.getElementById('searchResults')
 const searchGlass = document.getElementById('searchGlass')
 const resultList = document.getElementById('resultContainer')
 
+searchResults.style.display = "none"
+
 searchGlass.addEventListener('click',()=>{
+    document.getElementById('searchResults').style.display = "initial"
+    let query = document.getElementById('search').value
+    document.getElementById('searchRl').innerHTML = `${query}:`
+    fetchByCategory(query)
+    window.location.href = `#searchRl`
+    
+})
+
+searchBtn.addEventListener('click',()=>{
     document.getElementById('searchResults').style.display = "initial"
     let query = document.getElementById('search').value
     document.getElementById('searchRl').innerHTML = `${query}:`
@@ -152,6 +171,8 @@ function renderFoodArray(meals){
         li.appendChild(img);
         li.appendChild(span);
         resultList.appendChild(li);
+        searchResults.style.display = "flex"
+
     }
     // console.log(meals[0].strMeal)
 }
