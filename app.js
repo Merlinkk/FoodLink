@@ -8,6 +8,7 @@ const popupImgLink = document.getElementById('imgLink');
 const cross1 = document.getElementById('cross1');
 const cross2 = document.getElementById('cross2');
 foodContainerMain.style.display = "none";
+const fail = document.getElementById('fail');
 
 const searchBtn = document.getElementById('btn1');
 
@@ -17,6 +18,8 @@ const instructions = document.getElementById('instPara');
 const popupImg = document.getElementById('popupImg'); // <img id="popupImg">
 
 fetchMeal(title,foodImg)
+
+fail.style.display = "none"
 
 
 function fetchMeal(){
@@ -155,13 +158,18 @@ function fetchByCategory(category){
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
     .then(res=> res.json())
     .then(data=> {
+        fail.style.display = "none"
         console.log(data.meals)
         return data.meals
     })
     .then(meals=> renderFoodArray(meals))
+    .catch(err=> {
+        fail.style.display = "initial"
+    })
 }
 
 function renderFoodArray(meals){
+    resultList.innerHTML = "";
     for(let i=0; i< meals.length;i++){
         const li = document.createElement('li');
         const img = document.createElement('img');
