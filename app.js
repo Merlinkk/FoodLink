@@ -196,7 +196,7 @@ function renderFoodArray(meals) {
   }
   // console.log(meals[0].strMeal)
 }
-
+// 
 function fetchByID(Id) {
   loader.style.display = "flex";  
   fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${Id}`)

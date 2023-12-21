@@ -420,7 +420,7 @@ hr {
 /* ::-webkit-scrollbar {
   display: none;
 } */
-
+/*  */
 ::-webkit-scrollbar {
   width: 6px; /* width of the entire scrollbar */
 }
